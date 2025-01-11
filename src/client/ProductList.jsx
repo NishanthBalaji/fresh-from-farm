@@ -48,7 +48,7 @@ export default function ProductList() {
             let url;
             if (process.env.NODE_ENV === "production") {
                 // Use production URL
-                url = `${process.env.REACT_APP_API_URL}/api/products`;
+                url = `https://freshfromfarm.onrender.com/api/products`;
             } else {
                 // Use development URL (localhost)
                 url = "http://localhost:5000/api/products";

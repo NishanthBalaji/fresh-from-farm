@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const Product = require('../models/Product'); // Path to the Product model
+import mongoose from "mongoose";
+import Product from "../models/Product.js";
 
-mongoose.connect('mongodb://localhost:27017/fresh-from-farm')
+
+mongoose.connect(process.env.DB_URL)
     .then(() => {
         console.log('MongoDB connected successfully');
     })
