@@ -29,8 +29,19 @@ export default function EditProductForm() {
 
     useEffect(() => {
         const fetchProduct = async () => {
+
+            let url;
+
+            // Check if we are in production or development environment
+            if (process.env.NODE_ENV === "production") {
+                // Use production URL
+                url = `https://freshfromfarm.onrender.com/api/products/${id}`;
+            } else {
+                // Use development URL (localhost)
+                url = `http://localhost:5000/api/products/${id}`;
+            }
             try {
-                const response = await fetch(`http://localhost:5000/api/products/${id}`);
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Failed to fetch product details');
                 }

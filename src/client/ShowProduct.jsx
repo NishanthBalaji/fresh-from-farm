@@ -34,7 +34,7 @@ export default function ShowProduct({ product: initialProduct }) {
                 // Check if we are in production or development environment
                 if (process.env.NODE_ENV === "production") {
                     // Use production URL
-                    url = `${process.env.REACT_APP_API_URL}/api/products/${id}`;
+                    url = `https://freshfromfarm.onrender.com/api/products/${id}`;
                 } else {
                     // Use development URL (localhost)
                     url = `http://localhost:5000/api/products/${id}`;
@@ -146,7 +146,7 @@ export default function ShowProduct({ product: initialProduct }) {
         // Check if we are in production or development environment
         if (process.env.NODE_ENV === "production") {
             // Use production URL
-            url = `${process.env.REACT_APP_API_URL}/api/products/${id}`;
+            url = `https://freshfromfarm.onrender.com/api/products/${id}`;
         } else {
             // Use development URL (localhost)
             url = `http://localhost:5000/api/products/${id}`;

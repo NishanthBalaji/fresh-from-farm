@@ -41,7 +41,7 @@ export default function AddProductForm() {
 
         // API call to add product
         try {
-            const response = await fetch('http://localhost:5000/api/products', {
+            const response = await fetch('https://freshfromfarm.onrender.com/api/products', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
