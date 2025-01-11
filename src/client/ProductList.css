@@ -1,0 +1,380 @@
+.ProductList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100vw;
+    /* margin-top: 20%; */
+}
+
+#bread {
+    margin-top: 60px;
+    width: 100%;
+    padding: 3px;
+    height: 35px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.147);
+    padding-left: 3%;
+}
+
+#product-category {
+    width: 100%;
+    padding: 3px;
+    padding-left: 3%;
+    height: 35px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.147);
+    font-weight: bold;
+}
+
+#product-category-pc {
+    display: none;
+}
+
+
+@media (min-width: 625px) {
+
+    #bread,
+    #product-category {
+        width: 94%;
+        padding-left: 0%;
+
+    }
+}
+
+
+.category-product {
+    display: flex;
+    width: 100vw;
+}
+
+.CategoryList {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80px;
+    border-right: 1px solid rgba(0, 0, 0, 0.181);
+    /* border-top: 1px solid rgba(0, 0, 0, 0.181); */
+    overflow-y: auto;
+    height: 1000px;
+    scrollbar-width: none;
+    position: sticky;
+    /* Make it sticky */
+    top: 20px;
+    /* Stick to the top of the viewport */
+}
+
+.no-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.ProductListView {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 10px;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+@media (max-width: 420px) {
+    .ProductListView {
+        padding-right: 10px;
+        padding-top: 16px;
+        padding-bottom: 10px;
+        padding-left: 16px;
+    }
+
+}
+
+@media (min-width: 625px) {
+    .ProductListView {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (min-width: 750px) {
+    .ProductListView {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media (min-width: 980px) {
+    .ProductListView {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .ProductListView {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    #bread {
+        border-bottom: none;
+        padding-top: 10px;
+    }
+
+    #product-category-pc {
+        display: block;
+    }
+
+    #product-category {
+        display: none;
+    }
+
+    #for-pc {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+    #for-pc h3 {
+        margin-left: 10px;
+        margin-bottom: 0px;
+        margin-top: 35px;
+    }
+}
+
+
+
+@media (min-width: 1350px) {
+    .ProductListView {
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+}
+
+
+
+
+
+
+
+/* #newButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 6%;
+} */
+
+
+
+
+
+.addToCart {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.addToCart #addToCart {
+    border-radius: 5px;
+    margin: 0;
+}
+
+
+.addToCart button {
+    background-color: white;
+    color: rgba(239, 67, 114, 1);
+    border: 1px solid rgba(239, 67, 114, 1);
+    font-weight: 500;
+    padding: 3%;
+    width: 100%;
+
+}
+
+
+.addToCart .btn-group {
+    background-color: white;
+    color: rgba(239, 67, 114, 1);
+    width: 100%;
+}
+
+.addToCart #increase,
+#reduce {
+    background-color: rgba(241, 180, 196, 0.5);
+    width: 25%;
+}
+
+.addToCart #increase,
+#reduce:hover {
+    border: 1px solid rgba(239, 67, 114, 1);
+    color: rgba(239, 67, 114, 1);
+}
+
+.addToCart #cartQty {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: rgba(239, 67, 114, 1);
+    border-top: 1px solid rgba(239, 67, 114, 1);
+    border-bottom: 1px solid rgba(239, 67, 114, 1);
+}
+
+.addToCart #cartQty:hover {
+    border: 1px solid rgba(239, 67, 114, 1);
+    color: rgba(239, 67, 114, 1);
+    background-color: white;
+    border-left: none;
+    border-right: none;
+}
+
+.addToCart #reduce {
+    border-right: none;
+    border-radius: 0;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.addToCart #reduce:hover {
+    border-right: none;
+}
+
+.addToCart #increase {
+    border-left: none;
+    border-radius: 0;
+    border-radius: 0px 5px 5px 0px;
+    height: 100%;
+}
+
+.addToCart #increase:hover {
+    border-left: none;
+}
+
+#cart-status {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    font-size: 16px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+}
+
+#cart-button {
+    width: 95%;
+    background-color: rgba(239, 67, 114, 1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#view-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+#view-cart p {
+    margin: 10px 0;
+}
+
+#skeleton-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+#skeleton-productList {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-skeleton-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.skeleton-product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 16px;
+    padding-left: 5px;
+    gap: 10px;
+    overflow-y: auto;
+
+}
+
+@media (max-width: 420px) {
+    .category-skeleton {
+        margin-right: 4px !important;
+    }
+
+    .skeleton-product {
+        margin-right: 5px !important;
+    }
+
+    .skeleton-product {
+        padding-left: 0px;
+    }
+
+    .product-skeleton-col {
+        padding-right: 150px;
+        max-width: 100px;
+        margin-left: 0px !important;
+    }
+}
+
+@media (min-width: 625px) {
+    .skeleton-product {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (min-width: 750px) {
+    .skeleton-product {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media (min-width: 980px) {
+    .skeleton-product {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .skeleton-product {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+
+
+@media (min-width: 1350px) {
+    .skeleton-product {
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+}
+
+.first-column {
+    padding-right: 15px;
+}

@@ -1,0 +1,67 @@
+/* .addToCart {
+    width: 100%;
+}
+
+.addToCart #addToCart {
+    border-radius: 5px;
+}
+
+
+.addToCart button {
+    background-color: white;
+    color: rgba(239, 67, 114, 1);
+    border: 1px solid rgba(239, 67, 114, 1);
+    font-weight: 500;
+    padding: 3%;
+    width: 100%;
+
+}
+
+
+.addToCart .btn-group {
+    background-color: white;
+    color: rgba(239, 67, 114, 1);
+    width: 100%;
+}
+
+
+.addToCart #increase,
+#reduce {
+    background-color: rgba(241, 180, 196, 0.5);
+    width: 25%;
+}
+
+.addToCart #increase,
+#reduce:hover {
+    border: 1px solid rgba(239, 67, 114, 1);
+    color: rgba(239, 67, 114, 1);
+}
+
+.addToCart #cartQty {
+    border-left: none;
+    border-right: none;
+}
+
+.addToCart #cartQty:hover {
+    border: 1px solid rgba(239, 67, 114, 1);
+    color: rgba(239, 67, 114, 1);
+    background-color: white;
+    border-left: none;
+    border-right: none;
+}
+
+.addToCart #reduce {
+    border-right: none;
+}
+
+.addToCart #reduce:hover {
+    border-right: none;
+}
+
+.addToCart #increase {
+    border-left: none;
+}
+
+.addToCart #increase:hover {
+    border-left: none;
+} */

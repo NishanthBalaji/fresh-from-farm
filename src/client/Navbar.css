@@ -1,0 +1,96 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    /* Ensure the navbar spans the full width */
+    z-index: 1000;
+    /* Place the navbar above other elements */
+    background-color: rgb(254, 254, 254);
+    /* Prevent transparency issues */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 0;
+}
+
+
+
+.fullNavbar {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+}
+
+#back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    height: 60px;
+    width: 40px;
+    padding-right: 1%;
+    padding-left: 1%;
+    cursor: pointer;
+
+}
+
+#details {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* border: 1px solid black; */
+    height: 60px;
+    padding-left: 2px;
+    padding-top: 5px;
+}
+
+#delivery {
+    padding: 0;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#time {
+    color: rgba(239, 67, 114, 1);
+    font-weight: bolder;
+}
+
+#location {
+    padding: 0;
+    font-weight: bold;
+    font-size: small;
+}
+
+#newButton {
+    width: 130px;
+    margin-right: 1%;
+    background-color: rgba(239, 67, 114, 1);
+    border: none;
+    margin-top: 10px;
+    padding: 5%;
+}
+
+#cart-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    height: 60px;
+    width: 40px;
+    cursor: pointer;
+    margin-right: 0.5% !important
+}
+
+@media (min-width: 576px) {
+    #newButton {
+
+        margin-left: 60px;
+    }
+
+    #cart-icon {
+        margin-left: 10px;
+        padding-top: 5px;
+    }
+}

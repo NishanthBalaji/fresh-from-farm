@@ -1,0 +1,322 @@
+#card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+.card {
+    max-width: 450px;
+    height: 100%;
+    /* margin-top: 4%; */
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+
+
+.card-img-top {
+    margin-top: 40px;
+    max-width: 450px;
+    min-width: 430px;
+    aspect-ratio: 16 / 16;
+    height: 430px;
+    max-height: 500px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.card #product-details {
+    min-width: 430px;
+    max-width: 450px;
+    margin-top: 1%;
+}
+
+.card #product-details .card-subtitle {
+    margin-top: 1%;
+}
+
+
+.card .card-title {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.card #quantity {
+    color: grey;
+}
+
+.card .price-add {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.card #price {
+    font-weight: bold;
+}
+
+.add .price-add button {
+    background-color: rgba(239, 67, 114, 1);
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 20%;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+
+}
+
+.card .bold-text {
+    font-weight: bold;
+}
+
+.card #panel1-header {
+    margin: 1% 0;
+}
+
+
+.card .edit-button button,
+.delete-button button {
+    width: 100%;
+}
+
+
+.add #addToCart {
+    width: 80px;
+    background-color: rgba(239, 67, 114, 1);
+    color: white;
+    border: none;
+    font-size: small;
+    font-weight: 500;
+    padding: 5%;
+    height: max-content;
+}
+
+#addToCart {
+    border-radius: 5px;
+}
+
+
+
+.add #reduce,
+#cartQty,
+#increase {
+    width: 25px;
+    background-color: rgba(239, 67, 114, 1);
+    color: white;
+    border: none;
+    font-size: small;
+    font-weight: 500;
+    height: max-content;
+}
+
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+}
+
+.add button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.add #reduce {
+    border-right: none;
+    border-radius: 0;
+    border-radius: 5px 0px 0px 5px;
+    height: 27.5px;
+}
+
+.add #cartQty {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    height: 27.5px;
+}
+
+.add #increase {
+    border-left: none;
+    border-radius: 0;
+    border-radius: 0px 5px 5px 0px;
+    height: 27.5px;
+}
+
+
+
+.sub-details {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.MuiAccordionSummary-root {
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+
+#cart-status {
+    position: sticky;
+    /* Ensures it stays visible when scrolling */
+    bottom: 0;
+    /* Aligns it to the bottom of the viewport */
+    left: 0;
+    /* Aligns it to the left edge */
+    width: 100%;
+    /* Full width of the viewport */
+    background-color: white;
+    /* White background for contrast */
+    padding: 15px;
+    /* Adds space around the content */
+    font-size: 16px;
+    /* Text size for readability */
+    z-index: 999;
+    /* High z-index to appear above other elements */
+    display: flex;
+    /* Flexbox for centering */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    border-top: 1px solid #ddd;
+    /* Optional: Adds a subtle border at the top */
+}
+
+#cart-button {
+    width: 95%;
+    /* Almost full width */
+    background-color: rgba(239, 67, 114, 1);
+    /* Custom color for button */
+    color: white;
+    /* Text color */
+    display: flex;
+    /* Flexbox for content alignment */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+#view-cart {
+    display: flex;
+    /* Flexbox for alignment */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: space-between;
+    /* Space between items */
+    width: 95%;
+    /* Inner content width */
+}
+
+#view-cart p {
+    margin: 10px 0;
+    /* Space above and below text */
+}
+
+
+
+@media (max-width: 420px) {
+    #card-container {
+        min-width: 300px;
+    }
+
+    #card-container .card {
+        min-width: 300px;
+    }
+
+    #card-container .card-img-top {
+        min-width: 300px;
+        height: 400px;
+        margin-top: 50px;
+    }
+
+    #card-container .card #product-details {
+        min-width: 100vw;
+    }
+
+    #product-details .card-body {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    #product-details .breadcrumb {
+        margin-bottom: 8px;
+    }
+
+    .main-details {
+        padding-top: 0px;
+    }
+
+
+}
+
+
+
+@media (min-width: 900px) {
+
+    #full-showpage {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    #card-container {
+
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        /* background-color: aqua; */
+    }
+
+    #card-container .card {
+        flex-direction: row;
+        height: 700px;
+        min-width: 70%;
+        overflow: visible;
+        justify-content: center;
+    }
+
+    .card-img-top {
+        border-radius: 10px;
+        margin-right: 40px;
+        min-width: 400px;
+        max-width: 450px;
+        margin-top: 0px;
+        border: 1px solid rgb(217, 217, 217);
+    }
+
+    .card #product-details {
+        margin-top: 0px;
+        min-width: 450px;
+        max-width: 515px;
+        border: 1px solid rgba(128, 128, 128, 0.242);
+    }
+
+    #cart-status {
+        position: fixed;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #cart-button {
+        width: 55%;
+    }
+}

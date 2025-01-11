@@ -1,0 +1,38 @@
+.EditProductForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 350px;
+    max-width: 500px;
+    height: 100vh;
+    color: black;
+}
+
+.EditProductForm h2 {
+    margin-bottom: 1%;
+}
+
+.EditProductForm #price {
+    font-weight: 100;
+}
+
+.EditProductForm #quantity {
+    color: black;
+}
+
+.EditProductForm input {
+    width: 80vw;
+}
+
+.EditProductForm button {
+    margin-top: 5%;
+}
