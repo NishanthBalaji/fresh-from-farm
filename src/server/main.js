@@ -63,6 +63,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/products", async (req, res) => {
   try {
+    console.log('Fetching products');
     const category = req.query.category;
     const products = category
       ? await Product.find({ category })
