@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import Product from "../models/Product.js";
 
 
-mongoose.connect(process.env.DB_URL)
+mongoose.connect('mongo atlas db link')
     .then(() => {
         console.log('MongoDB connected successfully');
     })

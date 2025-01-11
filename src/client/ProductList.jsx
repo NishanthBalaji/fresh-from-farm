@@ -148,7 +148,7 @@ export default function ProductList() {
                 localStorage.setItem('cart', JSON.stringify(cartData));
             }
 
-            const isCartNotEmpty = cartData.length > 0;
+            const isCartNotEmpty = JSON.parse(localStorage.getItem('cart')).length > 0;
             setShowCart(isCartNotEmpty);
 
 
@@ -156,10 +156,6 @@ export default function ProductList() {
         });
     };
 
-
-    const addProductForm = () => {
-        navigate("/add");
-    };
 
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
 
