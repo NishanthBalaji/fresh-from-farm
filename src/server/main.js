@@ -20,6 +20,14 @@ app.use(mongoSanitize());
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(methodOverride("_method"));
 
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, '../../dist')));
+
+// For all routes, serve the index.html file of the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'));
+});
+
 // CORS setup
 const corsOptions = {
   origin: ["http://localhost:3000", "http://localhost:5173"], // list both frontend URLs
