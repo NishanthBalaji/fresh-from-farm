@@ -71,9 +71,20 @@ export default function EditProductForm() {
             return;
         }
 
+        let url;
+
+        // Check if we are in production or development environment
+        if (process.env.NODE_ENV === "production") {
+            // Use production URL
+            url = `https://freshfromfarm.onrender.com/api/products/${id}`;
+        } else {
+            // Use development URL (localhost)
+            url = `http://localhost:5000/api/products/${id}`;
+        }
+
         // API call to add product
         try {
-            const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+            const response = await fetch(url, {
                 method: 'PUT', // Update product using PUT or PATCH
                 headers: {
                     'Content-Type': 'application/json',
