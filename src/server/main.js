@@ -7,9 +7,8 @@ import mongoSanitize from "express-mongo-sanitize";
 import helmet from "helmet";
 import Product from "./models/Product.js";
 import ViteExpress from "vite-express";
-import path from 'path';
-
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
@@ -27,13 +26,12 @@ app.use(methodOverride("_method"));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from the React build directory
-app.use(express.static(path.join(__dirname, '../../dist')));
-
-// For all routes, serve the index.html file of the React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../dist/index.html'));
-});
+// MongoDB Connection
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/fresh-from-farm";
+mongoose
+  .connect(dbUrl)
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // CORS setup
 const corsOptions = {
@@ -42,25 +40,11 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-app.use(cors(corsOptions));
 
-app.use((req, res, next) => {
-  console.log(`Method: ${req.method}, URL: ${req.url}`);
-  next();
-});
-
-// MongoDB Connection
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/fresh-from-farm";
-mongoose
-  .connect(dbUrl)
-  .then(() => console.log("MongoDB connected successfully"))
-  .catch((err) => console.error("MongoDB connection error:", err));
-
-
-
+// API Routes
 app.get("/api/products", async (req, res) => {
   try {
-    console.log('Fetching products');
+    console.log("Fetching products");
     const category = req.query.category;
     const products = category
       ? await Product.find({ category })
@@ -70,7 +54,6 @@ app.get("/api/products", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
 
 app.post("/api/products", async (req, res) => {
   try {
@@ -113,6 +96,14 @@ app.delete("/api/products/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Failed to delete product" });
   }
+});
+
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, "../../dist")));
+
+// For all other routes, serve the index.html file of the React app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../dist/index.html"));
 });
 
 // Error Handling Middleware
