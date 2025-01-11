@@ -9,6 +9,8 @@ import Product from "./models/Product.js";
 import ViteExpress from "vite-express";
 import path from 'path';
 
+import { fileURLToPath } from 'url';
+
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
 }
@@ -20,6 +22,10 @@ app.use(express.json());
 app.use(mongoSanitize());
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(methodOverride("_method"));
+
+// Get the directory name using import.meta.url
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Serve static files from the React build directory
 app.use(express.static(path.join(__dirname, '../../dist')));
