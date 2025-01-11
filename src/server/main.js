@@ -56,10 +56,7 @@ mongoose
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// CRUD Routes
-app.get("/", (req, res) => {
-  res.send("Backend server is running");
-});
+
 
 app.get("/api/products", async (req, res) => {
   try {
@@ -73,6 +70,7 @@ app.get("/api/products", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 
 app.post("/api/products", async (req, res) => {
   try {
