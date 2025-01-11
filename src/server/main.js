@@ -7,6 +7,7 @@ import mongoSanitize from "express-mongo-sanitize";
 import helmet from "helmet";
 import Product from "./models/Product.js";
 import ViteExpress from "vite-express";
+import path from 'path';
 
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
